@@ -6,9 +6,9 @@ export declare class AuthController {
     constructor(authService: AuthService);
     register(registerDto: RegisterDto): Promise<{
         data: {
-            id: string;
             email: string;
             name: string;
+            id: string;
         };
     }>;
     login(loginDto: LoginDto): Promise<{
@@ -16,9 +16,9 @@ export declare class AuthController {
     }>;
     validateToken(id: string): Promise<{
         data: {
-            id: string;
             email: string;
             name: string;
+            id: string;
         };
     }>;
 }

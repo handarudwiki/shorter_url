@@ -10,13 +10,16 @@ exports.UrlModule = void 0;
 const common_1 = require("@nestjs/common");
 const url_service_1 = require("./url.service");
 const url_controller_1 = require("./url.controller");
+const prisma_1 = require("../providers/prisma");
+const cache_manager_1 = require("@nestjs/cache-manager");
 let UrlModule = class UrlModule {
 };
 exports.UrlModule = UrlModule;
 exports.UrlModule = UrlModule = __decorate([
     (0, common_1.Module)({
-        providers: [url_service_1.UrlService],
-        controllers: [url_controller_1.UrlController]
+        providers: [url_service_1.UrlService, prisma_1.PrismaService],
+        imports: [cache_manager_1.CacheModule.register()],
+        controllers: [url_controller_1.UrlController],
     })
 ], UrlModule);
 //# sourceMappingURL=url.module.js.map

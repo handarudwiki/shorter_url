@@ -30,7 +30,6 @@ model Url{
   origin_url       String  
   short_url        String  @unique
   expiration_date  DateTime
-  user_id          String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
