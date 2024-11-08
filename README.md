@@ -10,7 +10,7 @@
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>****
 <a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
 <a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 <a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
@@ -24,7 +24,37 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+URL Shortener :
+App for make urlt shorter
+
+## How To Use
+1. Installl Dependecy => npm i
+2. Make file.env => Copy From .env.example
+3. Run Migration => npx prisma migrate dev
+3. Generate Prisa Client => npx prisma generate
+
+## List Api
+### Authentication
+1. Register
+   - Endpoint => http://host:port/register
+   - method => post
+2. Login
+   - Endpoint => http://host:port/register
+   - method => post
+3. Me 
+   - Endpoint => http://host:port/me
+   - method => get
+
+### URL
+1. Create URl
+   - Endpoint => http://host:port/url
+   - method => post
+2. Get Original URl
+   - Endpoint => http://host:port/url
+   - method => get
+
+## Documentation (swagger)
+ http://host:port/api
 
 ## Installation
 
