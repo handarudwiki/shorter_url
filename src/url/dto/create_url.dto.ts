@@ -8,5 +8,5 @@ export class CreateUrlDto {
   @IsString()
   @IsOptional()
   @MaxLength(16)
-  custom_code: string;
+  custom_code?: string;
 }

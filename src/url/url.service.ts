@@ -43,7 +43,9 @@ export class UrlService {
       },
     });
 
-    return newUrl;
+    return {
+      data: newUrl,
+    };
   }
 
   async getOriginUrl(shortUrl: string): Promise<string> {
