@@ -47,9 +47,7 @@ export class UrlService {
   }
 
   async getOriginUrl(shortUrl: string): Promise<string> {
-    console.log(`chache before rettrieval ${shortUrl}`);
     const cacheUrl = await this.chacheManeger.get<string>(shortUrl);
-    console.log(`chache after rettrieval ${cacheUrl}`);
 
     if (cacheUrl) {
       return cacheUrl;
@@ -66,7 +64,6 @@ export class UrlService {
     }
 
     if (new Date() > url.expiration_date) {
-      //Delete to save storage
       await this.pirsmasService.url.delete({
         where: {
           short_url: shortUrl,
@@ -74,10 +71,7 @@ export class UrlService {
       });
       throw new GoneException('Url expired');
     }
-
-    console.log(shortUrl);
     await this.chacheManeger.set(shortUrl, url.origin_url, 3600);
-
     return url.origin_url;
   }
 }

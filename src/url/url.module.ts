@@ -6,7 +6,12 @@ import { CacheModule } from '@nestjs/cache-manager';
 
 @Module({
   providers: [UrlService, PrismaService],
-  imports: [CacheModule.register()],
+  imports: [
+    CacheModule.register({
+      ttl: 5,
+      max: 100,
+    }),
+  ],
   controllers: [UrlController],
 })
 export class UrlModule {}
