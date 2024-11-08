@@ -50,17 +50,16 @@ describe('UrlService', () => {
       };
 
       const expectedResult = {
-        data: {
-          id: 'url-id',
-          shortUrl: 'short-url',
-          originUrl: createUrlDto.original_url,
-        },
+        id: 'url-id',
+        shortUrl: 'short-url',
+        originUrl: createUrlDto.original_url,
       };
 
       (prismaService.url.create as jest.Mock).mockResolvedValue(expectedResult);
-
       const result = await urlService.createShortUrl(createUrlDto);
-      expect(result).toEqual(expectedResult);
+      expect(result).toEqual({
+        data: expectedResult,
+      });
     });
   });
 
