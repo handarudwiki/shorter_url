@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const url_service_1 = require("./url.service");
 const jwt_guard_1 = require("../common/guards/jwt.guard");
 const create_url_dto_1 = require("./dto/create_url.dto");
+const swagger_1 = require("@nestjs/swagger");
 let UrlController = class UrlController {
     constructor(urlService) {
         this.urlService = urlService;
@@ -33,6 +34,7 @@ exports.UrlController = UrlController;
 __decorate([
     (0, common_1.Post)(),
     (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
+    (0, swagger_1.ApiBearerAuth)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_url_dto_1.CreateUrlDto]),
@@ -48,6 +50,7 @@ __decorate([
 ], UrlController.prototype, "getOriginUrl", null);
 exports.UrlController = UrlController = __decorate([
     (0, common_1.Controller)('url'),
+    (0, swagger_1.ApiTags)('URL Shortener'),
     __metadata("design:paramtypes", [url_service_1.UrlService])
 ], UrlController);
 //# sourceMappingURL=url.controller.js.map

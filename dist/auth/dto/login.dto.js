@@ -9,27 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUrlDto = void 0;
-const swagger_1 = require("@nestjs/swagger");
+exports.LoginDto = void 0;
 const class_validator_1 = require("class-validator");
-class CreateUrlDto {
+const swagger_1 = require("@nestjs/swagger");
+class LoginDto {
 }
-exports.CreateUrlDto = CreateUrlDto;
+exports.LoginDto = LoginDto;
 __decorate([
     (0, swagger_1.ApiProperty)({
-        example: 'https://www.google.com',
+        example: 'test@gmail.com',
     }),
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsEmail)(),
     __metadata("design:type", String)
-], CreateUrlDto.prototype, "original_url", void 0);
+], LoginDto.prototype, "email", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
-        example: 'custom_code',
+        example: 'password',
     }),
+    (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.MaxLength)(16),
     __metadata("design:type", String)
-], CreateUrlDto.prototype, "custom_code", void 0);
-//# sourceMappingURL=create_url.dto.js.map
+], LoginDto.prototype, "password", void 0);
+//# sourceMappingURL=login.dto.js.map

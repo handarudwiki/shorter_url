@@ -12,8 +12,10 @@ import { JwtAuthGuard } from 'src/common/guards/jwt.guard';
 import { ResponseMessage } from 'src/common/decorators/responseMessage.decorator';
 import { Token } from 'src/common/decorators/token.decorator';
 import { LoginDto } from './dto/login.dto';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @Controller('')
+@ApiTags('Authentications')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
@@ -24,11 +26,13 @@ export class AuthController {
   }
 
   @Post('login')
+  @HttpCode(200)
   async login(@Body() loginDto: LoginDto) {
     return this.authService.login(loginDto);
   }
 
   @Get('me')
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @ResponseMessage('Token Valid')
   async validateToken(@Token('id') id: string) {

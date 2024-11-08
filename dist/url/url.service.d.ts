@@ -8,11 +8,11 @@ export declare class UrlService {
     createShortUrl(createUrlDto: CreateUrlDto): Promise<{
         data: {
             id: string;
-            origin_url: string;
-            short_url: string;
-            expiration_date: Date;
             createdAt: Date;
             updatedAt: Date;
+            short_url: string;
+            origin_url: string;
+            expiration_date: Date;
         };
     }>;
     getOriginUrl(shortUrl: string): Promise<string>;
